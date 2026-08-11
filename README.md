@@ -36,29 +36,53 @@ Streamlit Dashboard
 
 ```
 .
-├── config/
-├── dashboard/
-│   └── streamlit_app.py
-├── data/
-│   ├── raw/
-│   └── database/
-├── docs/
-│   └── data_dictionary.md
-├── logs/
-├── sql/
-│   ├── ddl/
-│   └── queries/
-├── src/
-│   ├── extract/
-│   ├── transform/
-│   ├── load/
-│   ├── utils/
-│   └── main.py
-├── tests/
+ecommerce-analytics-pipeline/
 ├── .github/
 │   └── workflows/
-├── requirements.txt
-└── README.md
+│       └── pipeline_ci.yml          # GitHub Actions workflow for automated testing
+├── config/
+│   ├── config.yaml                  # Global pipeline settings
+│   └── db_config.ini                # DB connection & API endpoint configuration
+├── data/
+│   └── database/
+│       └── ecommerce_analytics.db   # SQLite database file storing Star Schema
+├── docs/
+│   └── data_dictionary.md           # Schema definitions for fact & dimension tables
+├── logs/
+│   └── pipeline.log                 # Automated execution logs and error traces
+├── src/
+│   ├── __init__.py
+│   ├── extract/
+│   │   ├── __init__.py
+│   │   └── api_client.py            # API requests, retries, and rate limiting
+│   ├── transform/
+│   │   ├── __init__.py
+│   │   ├── flattener.py             # Unnests complex JSON payloads
+│   │   └── data_cleaner.py          # Type casting, null handling, & deduplication
+│   ├── load/
+│   │   ├── __init__.py
+│   │   └── db_loader.py             # SQLite loader for Star Schema tables
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   └── logger.py                # Centralized pipeline logger setup
+│   └── main.py                      # Core ETL orchestration entry point
+├── sql/
+│   ├── ddl/
+│   │   └── create_tables.sql        # DDL scripts for Star Schema tables
+│   └── queries/
+│       ├── category_performance.sql # SQL business performance queries
+│       └── customer_clv.sql         # Advanced SQL queries (CTEs/Window functions)
+├── dashboard/
+│   ├── streamlit_app.py             # Interactive Streamlit analytics application
+│   └── components/                  # Custom dashboard components and styling
+├── tests/
+│   ├── __init__.py
+│   ├── test_extract.py              # Unit tests for API endpoints & mocking
+│   └── test_transform.py            # Unit tests for flattening & data cleaning
+├── .env.example                     # Environment variables template
+├── .gitignore                       # Excludes temporary files, DBs, and virtual envs
+├── README.md                        # Portfolio documentation & setup instructions
+└── requirements.txt                 # Project dependencies
 ```
 
 ---
