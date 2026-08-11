@@ -211,20 +211,6 @@ streamlit run dashboard/streamlit_app.py
 
 ---
 
-## Run Tests
-
-```bash
-pytest tests -v
-```
-
-Expected output
-
-```
-5 passed
-```
-
----
-
 ## Dashboard
 
 Displays
@@ -252,6 +238,6 @@ Displays
 
 ## Author
 
-Satish
+Satheesh
 
 Machine Learning & Data Engineering Enthusiast
