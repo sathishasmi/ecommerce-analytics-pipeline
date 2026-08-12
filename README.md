@@ -39,7 +39,8 @@ Streamlit Dashboard
 ecommerce-analytics-pipeline/
 ├── .github/
 │   └── workflows/
-│       └── pipeline_ci.yml          # GitHub Actions workflow for automated testing
+│       ├── pipeline_ci.yml          # GitHub Actions workflow for automated testing
+|       └── daily_etl.yml            # Scheduled ETL pipeline and database refresh
 ├── config/
 │   ├── config.yaml                  # Global pipeline settings
 │   └── db_config.ini                # DB connection & API endpoint configuration
