@@ -189,7 +189,7 @@ net_total
 Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/sathishasmi/ecommerce-analytics-pipeline
 ```
 
 Create a virtual environment
@@ -261,8 +261,9 @@ Displays
 
 ---
 
+## Live Deployments
+Streamlit Web Application: https://sathish-ecommerce-analytics.streamlit.app/
+
+---
 ## Author
-
 Satheesh
-
-Machine Learning & Data Engineering Enthusiast
